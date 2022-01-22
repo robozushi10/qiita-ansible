@@ -1,0 +1,6 @@
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+LANG=ja_JP.UTF-8
+# http_proxy="http://proxy.co.jp:8080/"
+# https_proxy="http://proxy.co.jp:8080/"
+# ftp_proxy="http://proxy.co.jp:8080/"
+# socks_proxy="socks://proxy.co.jp:8080/"

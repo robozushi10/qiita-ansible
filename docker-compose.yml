@@ -1,0 +1,200 @@
+version: '3'
+
+services:
+  master:
+    build: ./assets/ubuntu1804/
+    image:  myansiblemaster
+    container_name: myansiblemaster
+    tty: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - "./PV/master/.ssh:/home/foo/.ssh"
+      - "./PV/master/share:/share"
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "49522-49999:22"
+    privileged: true    
+    command: /sbin/init 
+    working_dir: /home/foo
+    logging:
+      driver: json-file
+      options:
+        max-file: '4'
+        max-size: 1m
+
+  slave01:
+    build: ./assets/ubuntu1804
+    image:  myansibleslave
+    container_name: myansibleslave01
+    tty: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - "./PV/slave01/.ssh:/home/foo/.ssh"
+      - "./PV/slave01/share:/share"
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "49522-49999:22"
+    privileged: true    
+    command: /sbin/init 
+    working_dir: /home/foo
+    logging:
+      driver: json-file
+      options:
+        max-file: '4'
+        max-size: 1m
+ 
+  slave02:
+    build: ./assets/ubuntu1804
+    image:  myansibleslave
+    container_name: myansibleslave02
+    tty: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - "./PV/slave02/.ssh:/home/foo/.ssh"
+      - "./PV/slave02/share:/share"
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "49522-49999:22"
+    privileged: true    
+    command: /sbin/init 
+    working_dir: /home/foo
+    logging:
+      driver: json-file
+      options:
+        max-file: '4'
+        max-size: 1m
+ 
+  slave03:
+    build: ./assets/ubuntu1804
+    image:  myansibleslave
+    container_name: myansibleslave03
+    tty: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - "./PV/slave03/.ssh:/home/foo/.ssh"
+      - "./PV/slave03/share:/share"
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "49522-49999:22"
+    privileged: true    
+    command: /sbin/init 
+    working_dir: /home/foo
+    logging:
+      driver: json-file
+      options:
+        max-file: '4'
+        max-size: 1m
+ 
+  slave04:
+    build: ./assets/ubuntu1804
+    image:  myansibleslave
+    container_name: myansibleslave04
+    tty: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - "./PV/slave04/.ssh:/home/foo/.ssh"
+      - "./PV/slave04/share:/share"
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "49522-49999:22"
+    privileged: true    
+    command: /sbin/init 
+    working_dir: /home/foo
+    logging:
+      driver: json-file
+      options:
+        max-file: '4'
+        max-size: 1m
+ 
+  slave05:
+    build: ./assets/ubuntu1804
+    image:  myansibleslave
+    container_name: myansibleslave05
+    tty: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - "./PV/slave05/.ssh:/home/foo/.ssh"
+      - "./PV/slave05/share:/share"
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "49522-49999:22"
+    privileged: true    
+    command: /sbin/init 
+    working_dir: /home/foo
+    logging:
+      driver: json-file
+      options:
+        max-file: '4'
+        max-size: 1m
+ 
+  slave06:
+    build: ./assets/ubuntu1804
+    image:  myansibleslave
+    container_name: myansibleslave06
+    tty: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - "./PV/slave06/.ssh:/home/foo/.ssh"
+      - "./PV/slave06/share:/share"
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "49522-49999:22"
+    privileged: true    
+    command: /sbin/init 
+    working_dir: /home/foo
+    logging:
+      driver: json-file
+      options:
+        max-file: '4'
+        max-size: 1m
+ 
+  slave07:
+    build: ./assets/ubuntu1804
+    image:  myansibleslave
+    container_name: myansibleslave07
+    tty: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - "./PV/slave07/.ssh:/home/foo/.ssh"
+      - "./PV/slave07/share:/share"
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "49522-49999:22"
+    privileged: true    
+    command: /sbin/init 
+    working_dir: /home/foo
+    logging:
+      driver: json-file
+      options:
+        max-file: '4'
+        max-size: 1m
+ 
+  slave08:
+    build: ./assets/ubuntu1804
+    image:  myansibleslave
+    container_name: myansibleslave08
+    tty: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - "./PV/slave08/.ssh:/home/foo/.ssh"
+      - "./PV/slave08/share:/share"
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "49522-49999:22"
+    privileged: true    
+    command: /sbin/init 
+    working_dir: /home/foo
+    logging:
+      driver: json-file
+      options:
+        max-file: '4'
+        max-size: 1m
