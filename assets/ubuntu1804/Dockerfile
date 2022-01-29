@@ -38,10 +38,14 @@ COPY setup-systemd.sh /root
 RUN bash /root/setup-systemd.sh
 
 # sshd に加えて、その他必要と思われるツールをインストールしておく
-RUN apt-get install -y openssh-server vim curl jq wget iputils-ping net-tools
+RUN apt-get install -y openssh-server vim curl jq wget iputils-ping net-tools tree
 # /run/nologin を削除するために sshd が起動したあとに「/lib/systemd/systemd-user-sessions start」
 # を実行させるように定義した /lib/systemd/system/ssh.service に差し替える
 COPY ssh.service /lib/systemd/system/ssh.service
+
+# Docker コンテナでは使用できないと思うが、network-manager をインストールしておく
+RUN apt-get update \
+&&  apt-get install -y network-manager
 
 # root アカウントのパスワードを root とする
 RUN echo 'root:root' | chpasswd
